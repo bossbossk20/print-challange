@@ -20,7 +20,7 @@ const Main = props => {
         <Button
           type="primary"
           text="Print Preview"
-          onClick={e => setOpenModal(true)}
+          onClick={e => setOpenModal(false)}
         />
       </PrintPreviewBox>
 
