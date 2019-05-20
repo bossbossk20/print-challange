@@ -16,7 +16,8 @@
       "react/button-has-type": "off",
       "no-unused-vars": "off",
       "spaced-comment": "off",
-      "no-confusing-arrow": 0
+      "no-confusing-arrow": 0,
+      "import/prefer-default-export": "off"
     }
   }
   
