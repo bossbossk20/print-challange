@@ -11,7 +11,7 @@ import Button from '../../components/Button'
 import Modal from '../../components/Modal'
 
 const Main = props => {
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
   const componentRef = useRef()
 
   return (
@@ -20,7 +20,7 @@ const Main = props => {
         <Button
           type="primary"
           text="Print Preview"
-          onClick={e => setOpenModal(false)}
+          onClick={e => setOpenModal(true)}
         />
       </PrintPreviewBox>
 
