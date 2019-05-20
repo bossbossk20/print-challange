@@ -1,10 +1,13 @@
-// @flow
 import React from 'react'
+import { Button } from 'antd'
 
 type Props = {
   text: string,
 }
 
-export default (props: Props) => {
-  return <button>{props.text}</button>
+const AntdButton = (props: Props) => {
+  const { text, ...rest } = props
+  return <Button {...rest}>{props.text}</Button>
 }
+
+export default AntdButton

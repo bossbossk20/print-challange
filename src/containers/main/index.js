@@ -1,40 +1,51 @@
-import React from 'react'
-import { compose } from 'recompose'
-import { inject, observer } from 'mobx-react'
-import styled from 'styled-components'
+import React, { useState, useRef } from 'react'
+import ReactToPrint from 'react-to-print'
 
-type Props = {
-  title?: string
-}
+import { FooterModal, ModalTitle, PrintPreviewBox } from './styles'
+import data from './mockData'
+import PrintPreview from '../../components/PrintPreview'
+import tableColumn from './columnConfig'
+import Container from '../../components/Container'
+import Table from '../../components/Table'
+import Button from '../../components/Button'
+import Modal from '../../components/Modal'
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-`
+const Main = props => {
+  const [openModal, setOpenModal] = useState(true)
+  const componentRef = useRef()
 
-const Header = styled.h1.attrs({
-  isbig: props => (props.isbig ? '3em' : '2em')
-})`
-  font-size: ${props => props.isbig};
-`
-
-const Page1 = (props: Props) => {
-  const { ExampleStore, title } = props
   return (
     <Container>
-      <Header isbig>{ExampleStore.exampleData.text}</Header>
-      <Header>{title} </Header>
+      <PrintPreviewBox>
+        <Button
+          type="primary"
+          text="Print Preview"
+          onClick={e => setOpenModal(true)}
+        />
+      </PrintPreviewBox>
+
+      <Table columns={tableColumn} dataSource={data} />
+      <Modal
+        visible={openModal}
+        onCancel={() => setOpenModal(false)}
+        hideDefaultFooter
+        title={<ModalTitle>พิมพ์ป้ายพัสดุ</ModalTitle>}
+        footer={null}
+        bodyStyle={{
+          padding: '14px',
+        }}
+        width={760}
+      >
+        <PrintPreview printData={data} ref={componentRef} />
+        <FooterModal>
+          <ReactToPrint
+            trigger={() => <Button type="primary" text="Print" />}
+            content={() => componentRef.current}
+          />
+        </FooterModal>
+      </Modal>
     </Container>
   )
 }
 
-Page1.defaultProps = {
-  title: 'Page1'
-}
-
-export default compose(
-  inject('ExampleStore'),
-  observer
-)(Page1)
+export default Main

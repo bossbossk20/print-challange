@@ -3,9 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.18.1",
+    "art": "^0.10.3",
+    "bwip-js": "^1.7.3",
+    "jsbarcode": "^3.11.0",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.4",
     "react": "^16.8.6",
+    "react-barcode": "^1.3.4",
     "react-dom": "^16.8.6",
-    "sendit-react-scripts": "3.0.5"
+    "react-qr-code": "^0.1.3",
+    "react-router-dom": "^5.0.0",
+    "react-to-print": "^2.1.2",
+    "recompose": "^0.30.0",
+    "sendit-react-scripts": "3.0.5",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start --scripts-version sendit-react-scripts",
@@ -29,5 +41,25 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.2",
+    "customize-cra": "^0.2.12",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-flowtype": "^3.9.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.17.1",
+    "react-app-rewired": "^2.1.3"
   }
 }
